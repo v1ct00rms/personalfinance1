@@ -1,9 +1,13 @@
 from django.shortcuts import render
 from mainpage.forms import SaldoForm
-from mainpage.models import Saldo
+from mainpage.models import Saldo, Fatura
 
 def home(request):
-    return render(request, 'index.html')
+    ultima_fatura = Fatura.objects.first()
+    valor_fatura = 0
+    if ultima_fatura:
+        valor_fatura = ultima_fatura.valor
+    return render(request, 'index.html', {'valor_fatura': valor_fatura})
 
 def create(request):
     form = SaldoForm(request.POST or None)
