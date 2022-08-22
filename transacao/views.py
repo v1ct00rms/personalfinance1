@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from transacao.forms import TransacaoForm
 from mainpage.models import Transacao, Categoria, Fatura
 from dateutil.relativedelta import relativedelta
+from datetime import datetime
 
 def transacao(request):
     data = {}
