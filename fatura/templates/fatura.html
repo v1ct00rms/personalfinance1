@@ -44,74 +44,33 @@
             </div>
             <div class="second-content">
                 <div class="input-options">
-                    <div>
-
-                        <label for="descricao">Nome da Categoria</label>
-                        <input name="descricao" id="descricao" class="description text-center" type="text">
-                    </div>
-                    <div>
-                        <label for="descricao">Descrição</label>
-                        <input name="descricao" id="descricao" class="description text-center" type="text">
-                    </div>
-                    <div>
-                        <label for="valor">Valor total</label>
-                        <input name="descricao" id="descricao" class="description text-center" type="text">
-                    </div>
-                </div>
-                <button class="action-button" input type="submit">
-                    <img src="{% static 'img/icon-plus-white.png' %}" alt="ícone de adicionar">
-                    <a>Adicionar Categoria</a>
-                </button>
 
             </div>
             <div class="third-content">
-                <a>Todas as Categorias</a>
+                <a>Todas a Faturas</a>
                 <div>
                     <table class="table-transitions">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Nome da Categoria</th>
-                                <th>Descrição</th>
-                                <th>Valor Máximo</th>
-                                <th>Valor Disponível</th>
-                                <th>Ações</th>
+
+                                <th>Mês da Fatura</th>
+                                <th>Valor da Fatura</th>
+                                <th>Detalhada</th>
                             </tr>
                         </thead>
+
                         <tbody>
+                        {% for fatura in faturas %}
                             <tr>
-                                <td>1</td>
-                                <td>Alimentação</td>
-                                <td>Gastos com alimentação mensal</td>
-                                <td>R$1800,00</td>
-                                <td>R$1000,00</td>
+
+                                <td>{{fatura.data}}</td>
+                                <td>{{fatura.valor}}</td>
                                 <td>
-                                    <a class="btn btn-primary"><img src="{% static 'img/icon-trash.png' %}" alt="ícone de exclusão"
+                                    <a class="btn btn-primary"><img src="{% static 'img/icon-eye.png' %}" alt="Visualização detalhada"
                                             width="32"></a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>PetShop/Animais</td>
-                                <td>Banho e Tosa, Remédios, Veterinário, Alimentação</td>
-                                <td>R$300,00</td>
-                                <td>R$180,00</td>
-                                <td>
-                                    <a class="btn btn-primary"><img src="{% static 'img/icon-trash.png' %}" alt="ícone de exclusão"
-                                            width="32"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Contas Fixas de Casa</td>
-                                <td>Aluguel, Internet, Condomínio, Luz</td>
-                                <td>R$2000,00</td>
-                                <td>R$0</td>
-                                <td>
-                                    <a class="btn btn-primary"><img src="{% static 'img/icon-trash.png' %}" alt="ícone de exclusão"
-                                            width="32"></a>
-                                </td>
-                            </tr>
+                        {% endfor %}
                         </tbody>
                     </table>
                 </div>

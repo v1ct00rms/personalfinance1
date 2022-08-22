@@ -12,10 +12,11 @@ def transacao(request):
 
 def create(request):
 
-    date_after_month = datetime.today() + relativedelta(months=1)
-
     form = TransacaoForm(request.POST or None)
+    print(form)
     if form.is_valid():
+
+        atualtransacao = form.instance
         aux = form.instance.data
         aux = aux.replace(day=1)
 
@@ -25,13 +26,14 @@ def create(request):
 
             if not atualfatura.exists():
                 atualfatura = Fatura(data=aux, valor=0)
-
-            atualfatura = atualfatura.first()
+            else:
+                atualfatura = atualfatura.first()
             atualfatura.valor = atualfatura.valor + form.instance.valor
             atualfatura.save()
-        form.instance.atualparcela=1
-        form.instance.fatura = atualfatura
-        form.save()
+            auxtransacao = Transacao(data = aux, descricao=atualtransacao.descricao, valor=atualtransacao.valor, categoria=atualtransacao.categoria,
+                                     parcelas=atualtransacao.parcelas, atualparcela=i, fatura=atualfatura)
+            auxtransacao.save()
+            aux = aux + relativedelta(months=1)
         return transacao(request)
 
 def view(request, pk):

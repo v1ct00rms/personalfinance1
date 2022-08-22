@@ -6,7 +6,7 @@ from mainpage.models import Fatura
 def fatura(request):
     data = {}
     data['db'] = Fatura.objects.all()
-    return render(request, 'fatura.html')
+    return render(request, 'fatura.html', {'faturas':data['db']})
 
 
 def create(request):
