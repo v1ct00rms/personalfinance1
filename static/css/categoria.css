@@ -144,6 +144,12 @@ body {
     margin: 28px auto;
 }
 
+.action-button-update{
+    width: fit-content;
+    padding: 2px;
+
+}
+
 .action-button:hover {
     cursor: grab;
     background-color: #33535F;
@@ -176,8 +182,6 @@ body {
 
 .third-content a {
     font-family: 'Righteous', sans-serif;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .background-transacao {

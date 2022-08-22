@@ -50,15 +50,15 @@
                     {% csrf_token %}
 
                     <label for="data">Data:</label>
-                    <input name="data" id="data" class="date" type="date" placeholder="Data">
+                    <input name="data" id="data" class="date text-center" type="date" placeholder="Data">
                     <label for="descricao">Descrição: </label>
                     <input name="descricao" id="descricao" class="description text-center" type="text" placeholder="Descrição da transação">
-                    <label for="valor">Valor: </label>
-                    <input name="valor" class="valor-transacao text-center" type="text" placeholder="Valor">
+                    <label for="valor-transacao">Valor: </label>
+                    <input name="valor" id="valor-transacao" class="valor-transacao text-center" type="text" placeholder="Valor da transação">
                 </div>
                 <div class="select-options">
-                    <label for="select-id">Categoria: </label>
-                    <select name="categoria" id="categoria">
+                    <label for="categoria-id">Categoria: </label>
+                    <select name="categoria" class="text-center" id="categoria-id">
 
                         {% for categoria in categorias %}
 
@@ -67,7 +67,7 @@
                         {% endfor %}
                     </select>
                     <label for="parcelas">Número de Parcelas: </label>
-                    <select name="parcelas" id="parcelas">
+                    <select name="parcelas" id="parcelas" class="text-center">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -116,7 +116,7 @@
                                 <form action="/transacao/delete/{{transacao.id}}" method="post">
                                 {% csrf_token %}
                                 <td>
-                                    <button class="action-button" input type="submit">
+                                    <button title="Deletar Transação" class="action-button" input type="submit">
                     <a class="btn btn-primary"><img src="{% static 'img/icon-trash.png' %}" alt="ícone de exclusão"
                                             width="32"></a>
                 </button>

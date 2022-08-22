@@ -34,7 +34,8 @@ def update(request, pk):
     form = CategoriaForm(request.POST or None, instance=data['db'])
     if form.is_valid():
         form.save()
-    return redirect ('home')
+    print(form)
+    return categoria(request)
 
 def delete(request, pk):
 
