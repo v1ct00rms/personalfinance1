@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-size: 100%;
+    background: linear-gradient(150.76deg, #33535F -4.03%, #FFFFFF 82.17%);
+    min-height: 100vh;
+    height: fit-content;
+    padding-bottom: 78px;
+}
+
+.window-limit {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+
+}
+
+.content-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 22px;
+}
+
+.logo-nome {
+    display: flex;
+    align-items: center;
+}
+
+.logo-cabecalho {
+    width: 82px;
+}
+
+.nome-cabecalho {
+    font-family: 'Righteous', sans-serif;
+    font-size: 30px;
+    color: white;
+    font-weight: 400px;
+    padding-left: 22px;
+    margin: 0;
+}
+
+.cabecalho-menu {
+    display: flex;
+    gap: 38px;
+
+}
+
+.cabecalho-menu-item {
+    font-family: 'Sarala', sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 18px;
+    transition: 0.2s;
+
+}
+
+.cabecalho-menu-item:hover {
+    color: #24282D;
+    cursor: grab;
+}
+
+
+.conteudo {
+    border-top: 0.4px solid #ffffff;
+    position: relative;
+}
+
+.sub-header {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.sub-header img{
+    margin-top: 190px;
+}
+
+.sub-header div {
+    height: 150px;
+    background-color: #17282F;
+}
+
+
+.first-content a {
+    font-family: 'Righteous', sans-serif;
+    font-size: 42px;
+    color: #FFFFFF !important;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.second-content {
+    margin-top: 68px;
+    margin-bottom: 48px;
+    font-family: 'sarala';
+    font-size: 20px;
+}
+
+.select-options {
+    width: fit-content;
+    margin: 20px auto;
+    display: flex;
+    gap: 10px;
+
+}
+
+.input-options {
+    display: flex;
+    justify-content: space-around;
+}
+
+.second-content label {
+    font-family: 'Sarala', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #17282F;
+}
+
+.action-button {
+    background-color: #17282F;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: 0.3s;
+    margin: 28px auto;
+}
+
+.action-button:hover {
+    cursor: grab;
+    background-color: #33535F;
+}
+
+.action-button img {
+    width: 32px;
+
+}
+
+.action-button a {
+    font-family: 'Sarala', sans-serif;
+    font-weight: 550;
+    margin: 0 auto;
+    color: white !important;
+}
+
+.third-content {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    height: 450px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.third-content a {
+    font-family: 'Righteous', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.background-transacao {
+    width: 52px;
+}
+
+.table-transitions,
+.table-transitions th {
+    text-align: center;
+}
+
+.table-transitions {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.table-transitions td,
+.table-transitions th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table-transitions tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+.table-transitions th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #33535F;
+    color: white;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.btn-primary{
+    background-color: #F2575D!important;
+    border: none!important;
+}
+
+.third-content div{
+    width: 100%;
+    overflow-y: scroll;
+}

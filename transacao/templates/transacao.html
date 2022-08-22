@@ -1,0 +1,141 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Practice concious spending">
+    <title>Finanças Pessoais - Transações</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/transacao.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="window-limit content-cabecalho">
+            <nav class="logo-nome">
+                <img class="logo-cabecalho" src="{% static 'img/logofinancas002.png' %}" alt="Logo Cabeçalho Personal Finances">
+                <h2 class="nome-cabecalho">Finanças Pessoais</h2>
+            </nav>
+            <nav class="cabecalho-menu">
+                <a href="/" class="cabecalho-menu-item"><strong>Home</strong></a>
+                <a href="/transacao" class="cabecalho-menu-item"><strong>Transações</strong></a>
+                <a href="/categoria" class="cabecalho-menu-item"><strong>Categorias</strong></a>
+                <a href="/fatura" class="cabecalho-menu-item"><strong>Fatura</strong></a>
+            </nav>
+        </div>
+
+    </header>
+
+    <main class="conteudo">
+        <div class="sub-header">
+            <div></div>
+            <img src="{% static 'img/transacao-bg.png' %}" alt="background-transacao">
+        </div>
+        <div class="window-limit">
+            <div class="first-content">
+                <a>Transações</a>
+            </div>
+            <div class="second-content">
+                <div class="input-options">
+
+                    <form action="/transacao/create" method="post">
+
+                    {% csrf_token %}
+
+                    <label for="data">Data:</label>
+                    <input name="data" id="data" class="date" type="date" placeholder="Data">
+                    <label for="descricao">Descrição: </label>
+                    <input name="descricao" id="descricao" class="description text-center" type="text" placeholder="Descrição da transação">
+                    <label for="valor">Valor: </label>
+                    <input name="valor" class="valor-transacao text-center" type="text" placeholder="Valor">
+                </div>
+                <div class="select-options">
+                    <label for="select-id">Categoria: </label>
+                    <select name="categoria" id="categoria">
+
+                        {% for categoria in categorias %}
+
+                        <option value="{{categoria.id}}">{{categoria.nome}}</option>
+
+                        {% endfor %}
+                    </select>
+                    <label for="parcelas">Número de Parcelas: </label>
+                    <select name="parcelas" id="parcelas">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+                <button class="action-button">
+                    <img src="{% static 'img/icon-plus-white.png' %}" alt="ícone de adicionar">
+                    <a>Adicionar Transação</a>
+                </button>
+                </form>
+            </div>
+            <div class="third-content">
+                <a>Últimas transações</a>
+                <div>
+                    <table class="table-transitions">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Data</th>
+                                <th>Descrição</th>
+                                <th>Categoria</th>
+                                <th>Parcelas</th>
+                                <th>Valor</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for transacao in transacoes %}
+                            <tr>
+                                <td>{{transacao.id}}</td>
+                                <td>{{transacao.data}}</td>
+                                <td>{{transacao.descricao}}</td>
+                                <td>{{transacao.categoria.nome}}</td>
+                                <td>{{transacao.parcelas}}</td>
+                                <td>{{transacao.valor}}</td>
+
+                                <form action="/transacao/delete/{{transacao.id}}" method="post">
+                                {% csrf_token %}
+                                <td>
+                                    <button class="action-button" input type="submit">
+                    <a class="btn btn-primary"><img src="{% static 'img/icon-trash.png' %}" alt="ícone de exclusão"
+                                            width="32"></a>
+                </button>
+                                </td>
+                            </form>
+
+                            </tr>
+
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

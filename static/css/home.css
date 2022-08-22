@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Righteous&family=Sarala:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-size: 100%;
+    background: linear-gradient(150.76deg, #33535F -4.03%, #FFFFFF 82.17%);
+    min-height: 100vh; 
+}
+
+.window-limit {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+
+}
+
+.content-cabecalho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 22px;
+}
+
+.logo-nome{
+    display: flex;
+    align-items: center;
+}
+
+.logo-cabecalho {
+    width: 82px;
+}
+
+.nome-cabecalho {
+    font-family: 'Righteous', sans-serif;
+    font-size: 30px;
+    color: white;
+    align-self: center;
+    font-weight: 400px;
+    padding-left: 22px;
+}
+
+.cabecalho-menu {
+    display: flex;
+    gap: 38px;
+
+}
+
+.cabecalho-menu-item {
+    font-family: 'Sarala', sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 18px;
+    transition: 0.2s;
+
+}
+
+.cabecalho-menu-item:hover {
+    color: #24282D;
+    cursor: grab;
+}
+
+
+.conteudo {
+    border-top: 0.4px solid #ffffff;
+    position: relative;
+}
+
+.gh {
+    height: 150px;
+    width: 100%;
+    background-color: #17282F;
+    position: absolute;
+    z-index: -1;
+}
+
+
+.first-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Sarala', sans-serif;
+    color: white;
+    margin-top: 32px;
+    margin-left: 18px;
+}
+
+.first-content-info{
+    font-family: 'Righteous', sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    gap: 50px;
+    font-size: 18px;
+}
+
+.first-content-balance{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 35px;
+    font-size: 25px;
+}
+
+
+.icon-eye{
+    width: 22px;
+    height: 22px;
+}
+
+#eye-button{
+    background: none;
+    border: none;
+    transition: 0.2s;
+    padding: 2px;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+#eye-button:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: grab;
+}
+
+.inactive-view{
+    opacity: 0;
+}
+
+.value-container{
+    position: relative;
+    min-width: 160px;
+}
+
+.value-container a{
+    transition: .3s;
+}
+
+#eye-button img{
+    transition: .3s;
+}
+
+#view-value{
+    position: absolute;
+}
+
+#opened-eye{
+    position: absolute;
+}
+
+.action-button{
+    background-color: white;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.action-button:hover{
+    cursor: grab;
+    background-color: #CDCDCD;
+}
+
+.action-button img{
+    width: 32px;
+
+}
+
+.action-button a{
+    font-family: 'Sarala', sans-serif;
+    font-weight: 550;
+    margin: 0 auto;
+}
+
+.second-content{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.third-content{
+    display: flex;
+    justify-content: center;
+}
+
+.third-content img{
+    margin-top: 60px;
+    width: 680px;
+}
+    
+.footer{
+    border-top: 0.5px solid #5F6C70;
+    position: relative;
+    z-index: -1;
+    top: -18px;
+    font-family: 'Righteous', sans-serif;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: 50px;
+}
+
+
