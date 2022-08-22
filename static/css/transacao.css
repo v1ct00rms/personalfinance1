@@ -146,6 +146,12 @@ body {
     margin: 28px auto;
 }
 
+.action-button-delete{
+    border: none;
+    background-color: white;
+
+}
+
 .action-button:hover {
     cursor: grab;
     background-color: #33535F;
