@@ -82,6 +82,8 @@ body {
     position: relative;
 }
 
+.
+
 .sub-header {
     width: 100%;
     position: absolute;
@@ -182,6 +184,11 @@ body {
 
 .third-content a {
     font-family: 'Righteous', sans-serif;
+}
+
+.chart {
+
+    align-items: center;
 }
 
 .background-transacao {

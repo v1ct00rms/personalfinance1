@@ -13,7 +13,7 @@ class Categoria(models.Model):
     montante = models.DecimalField('Valor total a ser gasto', decimal_places=2, max_digits=50)
 
 class Transacao(models.Model):
-    valor = models.DecimalField('Valor da Transação', decimal_places =2, max_digits=50)
+    valor = models.DecimalField('Valor da Transação', decimal_places=2, max_digits=50)
     data = models.DateField('Data')
     descricao = models.CharField('Descrição', max_length=100, default = None)
     parcelas = models.IntegerField('Parcelas')

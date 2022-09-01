@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Practice concious spending">
+    <title>Finanças Pessoais - Fatura</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/categoria.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+
+
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Gastos por Categoria',
+            subtitle: 'Neste Dashboard você poderá acompanhar as despesas por categoria',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+
+</head>
+<body>
+      <header class="cabecalho">
+              <div class="window-limit content-cabecalho">
+                  <nav class="logo-nome">
+                      <img class="logo-cabecalho" src="{% static 'img/logofinancas002.png' %}" alt="Logo Cabeçalho Personal Finances">
+                      <h2 class="nome-cabecalho">Finanças Pessoais</h2>
+                  </nav>
+                  <nav class="cabecalho-menu">
+                      <a href="/" class="cabecalho-menu-item"><strong>Home</strong></a>
+                      <a href="/transacao" class="cabecalho-menu-item"><strong>Transações</strong></a>
+                      <a href="/categoria" class="cabecalho-menu-item"><strong>Categorias</strong></a>
+                      <a href="/fatura" class="cabecalho-menu-item"><strong>Fatura</strong></a>
+                      <a href="/dashboard" class="cabecalho-menu-item"><strong>Dashboard</strong></a>
+                  </nav>
+              </div>
+
+    </header>
+
+      <main class="conteudo">
+        <div class="sub-header">
+            <div></div>
+            <img src="{% static 'img/categorias2-bg.png' %}" alt="background-transacao">
+        </div>
+        <div class="window-limit">
+            <div class="first-content">
+                <a>Dashboard</a>
+            </div>
+            < class="second-content">
+                <div class="input-options">
+
+            </div>
+
+
+          <div class="chart">
+
+              <div id="columnchart_material" style="width: 1200px; height: 800px;"></div>
+          </div>
+
+
+
+        </main>
+
+
+
+
+</body>
+</html>

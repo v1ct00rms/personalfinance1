@@ -21,5 +21,6 @@ urlpatterns = [
     path('', include('mainpage.urls')),
     path('categoria/', include('categoria.urls')),
     path('transacao/', include('transacao.urls')),
-    path('fatura/', include('fatura.urls'))
+    path('fatura/', include('fatura.urls')),
+    path('dashboard/', include('dashboard.urls'))
 ]
